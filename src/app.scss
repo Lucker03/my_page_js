@@ -1,0 +1,18 @@
+.pagename {
+  margin-bottom: 13px;
+}
+
+.pageimg {
+  width: 100px;
+}
+
+.pages {
+  display: grid;
+  grid-template-columns: repeat(5, 95px);
+}
+
+.onepagearea {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}
