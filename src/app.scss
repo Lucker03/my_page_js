@@ -7,12 +7,42 @@
 }
 
 .pages {
-  display: grid;
-  grid-template-columns: repeat(5, 95px);
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
 }
 
 .onepagearea {
   height: 100px;
   width: 100px;
   text-align: center;
+}
+
+.more {
+  text-align: center;
+}
+
+@media (min-width: 0px) {
+  .pages {
+    width: 300px;
+  } 
+}
+
+@media (min-width: 420px) {
+  .pages{
+    width: 400px;
+  }
+}
+
+.send {
+  text-align: center;
+}
+
+.button {
+  margin-top: 10px;
 }
