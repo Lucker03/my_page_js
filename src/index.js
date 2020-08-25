@@ -1,10 +1,11 @@
 import './app.scss';
 
 let lastsearch = 'Ahaus';
-let lastTake = 20;
+const lastTake = 20;
+let skip = 0;
+let timeoutID = 0;
 
 chayns.ready.then(() => {
-    console.log('Chayns is ready, environment loaded', chayns.env);
     chayns.ui.initAll();
     setEventlister('#loadMore', '#textInp');
     loadpages();
@@ -16,12 +17,22 @@ chayns.ready.then(() => {
 
 const setEventlister = (buttonid, suchId) => {
     document.querySelector(buttonid).addEventListener('click', loadMore);
-    document.querySelector(suchId).addEventListener('change', search);
+    document.querySelector(suchId).addEventListener('keypress', seachTimeout);
 
     document.querySelector('#ready').addEventListener('click', formular);
 };
 
+const login = () => {
+    chayns.addAccessTokenChangeListener(() => {
+    });
+    chayns.login();
+  };
+
 const formular = () => {
+    if (!chayns.env.user.isAuthenticated) {
+        login();
+    }
+
     const name = document.querySelector('#name').value;
     const mail = document.querySelector('#mail').value;
     const url = document.querySelector('#url').value;
@@ -39,20 +50,31 @@ const formular = () => {
             }
         });
     } else {
-        chayns.dialog.alert('Hinweis', 'Name und Email sind pflicht!').then(console.log);
+        chayns.dialog.alert('Hinweis', 'Name und Email sind pflicht!');
     }
 };
 
+const seachTimeout = () => {
+    if (timeoutID > 0) {
+        clearTimeout(timeoutID);
+    }
+
+    timeoutID = setTimeout(() => {
+        search();
+        timeoutID = 0;
+    }, 1500);
+};
+
 const search = () => {
-    lastTake = 20;
+    skip = 0;
     const output = document.querySelector('#textInp').value;
     lastsearch = output;
     loadpages(true);
 };
 
 const loadMore = () => {
-    lastTake += 20;
-    loadpages(true);
+    skip += lastTake;
+    loadpages();
 };
 
 const showpages = (datas) => {
@@ -89,6 +111,12 @@ const showpages = (datas) => {
         byerror.appendChild(pageimg);
         currentPosition.appendChild(pageDiv);
     }
+    const noMoreRoom = datas.length % 4;
+    if (noMoreRoom > 0) {
+        document.querySelector('#loadMore').classList.add('hidden');
+    } else {
+        document.querySelector('#loadMore').classList.remove('hidden');
+    }
 };
 
 const ShowNewPages = (datas) => {
@@ -103,7 +131,7 @@ const ShowNewPages = (datas) => {
 };
 
 const loadpages = async (isnewpage = false) => {
-    const data = await fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${lastsearch}&Skip=0&Take=${lastTake}`);
+    const data = await fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${lastsearch}&Skip=${skip}&Take=${lastTake}`);
     const body = await data.json();
     const cons = await body.Data;
 

@@ -4,6 +4,7 @@
 
 .pageimg {
   width: 100px;
+  height: 64px;
 }
 
 .pages {
@@ -21,6 +22,10 @@
   height: 100px;
   width: 100px;
   text-align: center;
+}
+
+.hidden {
+  display: none;
 }
 
 .more {
@@ -44,5 +49,10 @@
 }
 
 .button {
-  margin-top: 10px;
+  margin-top: 3px;
+}
+
+.Suche {
+  display: flex;
+  justify-content: space-between;
 }
