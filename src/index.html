@@ -21,53 +21,59 @@
                     <h1>My Favorit Sitest</h1>
                     <input class="input textInp" id="textInp" type="text" placeholder="Suche">
                 </div>
-                
-                <p>Dies ist meine Seite, wo Du auf die Suche nach verschiedenen Chayns Pages gehen kannst.</p>
+
+                <p class="first">Dies ist meine Seite, wo Du auf die Suche nach verschiedenen Chayns Pages gehen kannst.
+                </p>
             </div>
-            
+
 
             <div class="container" id="constant">
                 <div class="pages" id="page">
 
-                    
+
                 </div>
                 <!--Finish of grid-->
             </div>
-
-            <div class="more">
-                <button class="button" id="loadMore">Mehr laden</button>
-            </div>
-
-            <div class="accordion" data-group="1">
-                <div class="accordion__head">
-                    <div class="accordion__head__icon accordion--trigger">
-                        <i class="ts-angle-right"></i>
-                    </div>
-                    <div class="accordion__head__title  accordion--trigger">
-                        Schicke uns deine Page
-                    </div>
+            <div class="hidden firsthide">
+                <div class="more">
+                    <button class="button" id="loadMore">Mehr laden</button>
                 </div>
-                <div class="accordion__body">
-                    <div class="accordion__item">
-                        <div style="width: 100%;">
-                            <div class="name">
-                                <input class="input textInp" type="text" id="name" placeholder="Name" style="width: 100%;">
-                            </div>
 
-                            <div class="mail">
-                                <input class="input textInp" type="text" id="mail" placeholder="E-mail" style="width: 100%;">
-                            </div>
+                <div class="accordion" data-group="1">
+                    <div class="accordion__head">
+                        <div class="accordion__head__icon accordion--trigger">
+                            <i class="ts-angle-right"></i>
+                        </div>
+                        <div class="accordion__head__title  accordion--trigger">
+                            Schicke uns deine Page
+                        </div>
+                    </div>
+                    <div class="accordion__body">
+                        <div class="accordion__item">
+                            <div style="width: 100%;">
+                                <div class="name input-group">
+                                    <input class="input textInp" type="text" id="name" style="width: 100%;">
+                                    <label for="name" id="nameLabel" class="input--invalid">Name</label>
+                                </div>
 
-                            <div class="adresse">
-                                <input class="input textInp" type="text" id="url" placeholder="Url deiner Seite" style="width: 100%;">
-                            </div>
+                                <div class="mail input-group">
+                                    <input class="input textInp" type="text" id="mail" style="width: 100%;">
+                                    <label for="mail" id="mailLabel" class="input--invalid">E-Mail</label>
+                                </div>
 
-                            <div class="comment">
-                                <input class="input textInp" type="text" id="comment" placeholder="comment" style="width: 100%;">
-                            </div>
+                                <div class="adresse input-group">
+                                    <input class="input textInp" type="text" id="url" style="width: 100%;">
+                                    <label for="url" id="urlLabel" class="">Url deiner Seite</label>
+                                </div>
 
-                            <div class="send">
-                                <button class="button" id="ready">Abschicken</button>
+                                <div class="comment input-group">
+                                    <input class="input textInp" type="text" id="comment" style="width: 100%;">
+                                    <label for="comment" id="commentLabel" class="">comment</label>
+                                </div>
+
+                                <div class="send input-group">
+                                    <button class="button" id="ready">Abschicken</button>
+                                </div>
                             </div>
                         </div>
                     </div>
