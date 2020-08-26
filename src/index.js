@@ -169,7 +169,7 @@ const showpages = (datas) => {
         byerror.classList.add('byerrorpng');
         pageDiv.classList.add('onepagearea');
         pageImgDiv.classList.add('pageimg');
-        pageImgDiv.onclick = () => {
+        pageDiv.onclick = () => {
             chayns.openUrlInBrowser(`http://chayns.net/${siteId}`);
         };
         pageimg.classList.add('img');
