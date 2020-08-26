@@ -185,7 +185,7 @@ const showpages = (datas) => {
     chayns.hideWaitCursor();
     document.querySelector('.firsthide').classList.remove('hidden');
     const noMoreRoom = datas.length % 4;
-    if (noMoreRoom > 0) {
+    if (noMoreRoom > 0) {t
         document.querySelector('#loadMore').classList.add('hidden');
     } else {
         document.querySelector('#loadMore').classList.remove('hidden');
