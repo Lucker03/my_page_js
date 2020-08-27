@@ -136,7 +136,7 @@ const seachTimeout = () => {
         timeoutID = 0;
     }, 500);
 };
-
+//search
 const search = () => {
     skip = 0;
     const output = document.querySelector('#textInp').value;
@@ -148,7 +148,7 @@ const loadMore = () => {
     skip += lastTake;
     loadpages();
 };
-
+//showpages
 const showpages = (datas) => {
     for (let i = 0; i < datas.length; i += 1) {
         let pagename = datas[i].appstoreName;
@@ -193,7 +193,7 @@ const showpages = (datas) => {
         document.querySelector('#loadMore').classList.remove('hidden');
     }
 };
-
+//shownewpages
 const ShowNewPages = (datas) => {
     const parentNode = document.getElementById('constant');
     const deletepage = document.getElementById('page');
