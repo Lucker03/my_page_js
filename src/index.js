@@ -125,7 +125,7 @@ const formular = () => {
         chayns.dialog.alert('Hinweis', 'Name und Email sind pflicht!');
     }
 };
-
+//seachTimerout
 const seachTimeout = () => {
     if (timeoutID > 0) {
         clearTimeout(timeoutID);
