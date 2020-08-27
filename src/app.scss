@@ -1,0 +1,75 @@
+.pageimg {
+  width: 100px;
+  height: 64px;
+}
+
+.pages {
+  display: flex;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.pageDiv {
+  margin: 10px;
+  cursor: pointer;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.onepagearea {
+  height: 100px;
+  width: 100px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.more {
+  text-align: center;
+}
+
+@media (min-width: 0px) {
+  .pages {
+    width: 300px;
+  } 
+}
+
+@media (min-width: 420px) {
+  .pages{
+    width: 480px;
+  }
+}
+
+.send {
+  text-align: center;
+}
+
+.button {
+  margin: 10px;
+}
+
+#loadMore {
+  margin: 20px 30px 30px 30px;
+}
+
+#ready {
+  margin-top: 20px;
+}
+
+.Suche {
+  display: flex;
+  justify-content: space-between;
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.first {
+  margin-bottom: 20px;
+}
