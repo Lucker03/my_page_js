@@ -205,6 +205,7 @@ const ShowNewPages = (datas) => {
     showpages(datas);
 };
 
+//loadpages
 const loadpages = async (isnewpage = false) => {
     chayns.showWaitCursor();
     const data = await fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${lastsearch}&Skip=${skip}&Take=${lastTake}`);
