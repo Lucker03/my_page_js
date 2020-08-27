@@ -45,6 +45,7 @@ const setEventlister = (buttonid, suchId) => {
     document.querySelector('#ready').addEventListener('click', formular);
 };
 
+//formular
 const formularCheck = (check) => {
     if (check === 1) {
         name = document.querySelector('#name').value;
@@ -98,6 +99,7 @@ const login = () => {
     chayns.login();
 };
 
+//formular
 const formular = () => {
     if (!chayns.env.user.isAuthenticated) {
         login();
