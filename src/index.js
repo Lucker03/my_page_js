@@ -45,6 +45,7 @@ const setEventlister = (buttonid, suchId) => {
     document.querySelector('#ready').addEventListener('click', formular);
 };
 
+//formular
 const formularCheck = (check) => {
     if (check === 1) {
         name = document.querySelector('#name').value;
@@ -98,6 +99,7 @@ const login = () => {
     chayns.login();
 };
 
+//formular
 const formular = () => {
     if (!chayns.env.user.isAuthenticated) {
         login();
@@ -123,7 +125,7 @@ const formular = () => {
         chayns.dialog.alert('Hinweis', 'Name und Email sind pflicht!');
     }
 };
-
+//seachTimerout
 const seachTimeout = () => {
     if (timeoutID > 0) {
         clearTimeout(timeoutID);
@@ -134,7 +136,7 @@ const seachTimeout = () => {
         timeoutID = 0;
     }, 500);
 };
-
+//search
 const search = () => {
     skip = 0;
     const output = document.querySelector('#textInp').value;
@@ -146,7 +148,7 @@ const loadMore = () => {
     skip += lastTake;
     loadpages();
 };
-
+//showpages
 const showpages = (datas) => {
     for (let i = 0; i < datas.length; i += 1) {
         let pagename = datas[i].appstoreName;
@@ -191,7 +193,7 @@ const showpages = (datas) => {
         document.querySelector('#loadMore').classList.remove('hidden');
     }
 };
-
+//shownewpages
 const ShowNewPages = (datas) => {
     const parentNode = document.getElementById('constant');
     const deletepage = document.getElementById('page');
@@ -203,6 +205,7 @@ const ShowNewPages = (datas) => {
     showpages(datas);
 };
 
+//loadpages
 const loadpages = async (isnewpage = false) => {
     chayns.showWaitCursor();
     const data = await fetch(`https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${lastsearch}&Skip=${skip}&Take=${lastTake}`);
